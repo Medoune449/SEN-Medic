@@ -1,0 +1,359 @@
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	list-style: none;
+	text-decoration: none;
+	 font-family: "Jost", sans-serif;
+}
+:root{/*références des couleurs */
+	--bg-color: rgb(128, 128, 128);/*couleur background */
+	--text-color: green;/*couleur texte vert */
+	--main-color: #ea5445;
+	--other-color: #858585;
+	--h1-font: 5rem;
+	--p-font: 1.1rem;
+}
+
+body {
+	padding: 0;
+    margin: 0;
+	background: var(--bg-color);
+	color: var(--text-color);
+}
+
+.slider-frame{
+    overflow: hidden;
+    height: 800px;
+    width: 1200px;
+    margin-left: 360px;
+    margin-top: 20px;
+}
+
+/*-----SLIDE ANIMATION BEGIN -----*/
+
+@keyframes slide_animation{
+    0% {right: 0px;}
+    10% {right: 0px;}
+    20% {right: 1300px;}/*-----Valeur a ne pas changer -----*/
+    30% {right: 1300px;}/*-----Valeur a ne pas changer -----*/
+    40% {right: 1800px;}
+    50% {right: 1800px;}
+    60% {right: 1300px;}/*-----Valeur a ne pas changer -----*/
+    70% {right: 1300px;}/*-----Valeur a ne pas changer -----*/
+    80% {right: 0px;}
+    90% {right: 0px;}
+    100% {right: 0px;}
+}
+
+.slide-images{
+    width: 4800px;
+    height: 800px;
+    margin: 0 0 0 -2400px;
+    position: relative;
+    animation-name: slide_animation;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-play-state: running;
+}
+
+.img-container{
+    height: 800px;
+    width: 1200px;
+    position: relative;
+    float: right;
+}
+
+/*------ END OF SLIDE IMAGES -----*/
+
+header{
+	position: fixed;
+	width: 100%;
+	top: 0;
+	right: 0;
+	z-index: 1000;
+	padding: 32px 13%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	transition: all .50s ease;
+}
+
+/*Sidenav menu*/
+.sidenav {
+	height: 100%;
+	width: 250px;/*largeur menu*/
+	position: fixed;
+	z-index: 1;
+	top: 0;/*menu est au sommet de la page*/
+    left: -250px;
+    background-color: green;/*menu couleur de fond verticale*/
+    padding-top: 60px;
+    transition: left 0.5s ease;/*Sidenav menu ouvert/fermé*/
+
+}
+
+/*Sidenav menu links*/
+.sidenav a {
+	padding: 13px 13px 13px 32px;/*espacement entre les noms du menu*/
+    text-decoration: none;
+    font-size: 25px;
+    color: black;/*ecriture menu*/
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+	color: white;/*survol menu*/
+	transform: translateY(-2px);
+}
+
+.sidenav ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;/*marge noms du menu*/
+}
+
+/*active class*/
+.sidenav.active {
+	left: 0;
+}
+
+/*close btn*/
+.sidenav .close {
+	position: absolute;
+	top: 0;
+	right: 25px;
+	font-size: 36px;/*taille du croix*/
+}
+
+/*icone burger logo*/
+.burger-icon span {
+	display: block;
+	width: 35px;
+	height: 5px;
+	background-color: green;/*couleur icon-menu*/
+	margin: 6px;/*marge menu-icon*/
+}
+
+.logo{/*le logo*/
+		padding: 9px 20px;
+		font-size: 15px;/*la taille*/
+        margin-left: 0px;/*laisser une marge à gauche*/
+        
+	}
+
+	section{
+	padding: 0px 13% 0px;
+}
+.hero{
+	position: relative;
+	height: 100vh;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 3rem;
+}
+ /*photo de profil */
+.img-container img{
+	max-width: 600px;
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}
+ /* prenom et nom */
+.hero-text h1{
+	font-size: var(--h1-font);
+	line-height: 1.1;
+	font-weight: 700;
+	margin: 20px 0;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	text-shadow: -1px -1px 0px #000, 7px 7px 0px #000, 9px 9px 0px #00000055;
+}
+ /* prenom */
+.hero-text h1 span{
+    color: blue;
+}
+ /* Bonjour, je m'appelle */
+.hero-text h6{
+	font-size: 22px;
+	font-weight: 600;
+}
+ /* je m'appelle */
+.hero-text h6 span{
+	color: green;
+}
+ /* je suis */
+.hero-text h4{
+	 font-family: "Caveat", cursive;
+	 font-size: 35px;
+	 font-weight: bold;
+	 margin-bottom: 30px;
+}
+ /* je suis un étudiant .... */
+.hero-text p{
+	font-size: var(--p-font);
+	color: white;
+	margin-bottom: 20px;
+	line-height: 2;
+}
+ /* application icones */
+.hero-icons i{
+	display: inline-block;
+	font-size: 24px;
+	color: var(--text-color);
+	margin-right: 20px;
+    transition: all .6s ease;
+    margin-bottom: 40px;
+}
+ /* application icones */
+.hero-icons i:hover{
+	transform: rotate3d(0, 0, 1, 360deg);
+	color: green;
+}
+ 
+ /* scroll bouton*/
+.scroll{
+	position: absolute;
+	top: 92%;
+	left: 47%;
+	transform: translateY(-50%);
+	display: flex;
+	align-items: center;
+}
+ /* scroll bouton*/
+.scroll a{
+	font-size: 14px;
+	font-weight: 600;
+	text-transform: uppercase;
+	color: var(--text-color);
+	letter-spacing: .05em;
+	transition: all .6s ease;
+}
+ /* scroll bouton*/
+.scroll i{
+	font-size: 16px;
+	margin-right: 9px;
+}
+ /* scroll bouton*/
+.scroll a:hover{
+	transform: translateY(-7px);
+	color: green;
+}
+@media(max-width: 1800px){
+	header{
+		padding: 22px 6%;
+	}
+	section{
+		padding: 40px 6% 50px;
+	}
+}
+@media(max-width:1510px){
+    :root{
+    	--h1-font: 4.2rem;
+    	--p-font: 1rem;
+    }
+    .hero-img img{
+    	max-width: 540px;
+	    width: 100%;
+	    height: 100%;
+	    object-fit: contain;
+    }
+}
+@media(max-width:1330px){
+     header{
+     	padding: 22px 4%;
+     }
+     section{
+     	padding: 40px 4% 50px;
+     }
+     :root{
+    	--h1-font: 4rem;
+    }
+    .hero-img img{
+    	max-width: 500px;
+	    width: 100%;
+	    height: 100%;
+	    object-fit: contain;
+    }
+}
+ /* barre de menu */
+@media(max-width:1200px){
+	#menu-icon{
+		display: block;
+	}
+	.navlist{
+		position: absolute;
+		top: 0;
+		right: -100%;
+		width: 100%;
+		height: 100vh;
+		backdrop-filter: blur(30px);
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		padding-top: 150px;
+		transition: all .6s ease;
+	}
+	.navlist a{
+		display: block;
+		padding: 0;
+		margin: 0px 0px 30px 0px;
+		font-size: 1.7rem;
+	}
+	.navlist a:hover{
+		color: white;
+	}
+	.navlist.open{
+		right: 0;
+	}
+	/* background color portfolio */
+	header{
+		background: #22211f;
+		padding: 10px 4%;
+	}
+	.logo{
+		font-size: 25px;
+	}
+	.nav-btn{
+		padding: 9px 20px;
+		font-size: 14px;
+	}
+	.scroll{
+		display: none;
+	}
+	.hero{
+		display: flex;
+		flex-wrap: wrap;
+		gap: 2rem;
+		height: auto;
+	}
+	.hero-text{
+		text-align: center;
+		order: 2;
+		width: 100%;
+	}
+	.hero-text p{
+		width: 100%;
+	}
+	.hero-img{
+		margin: auto;
+	}
+	.hero-btn{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+}
+
+@media(max-width:610px){
+	:root{
+		--h1-font: 2.7rem;
+	}
+	.hero-text h4{
+		font-size: 23px;
+	}
+}
