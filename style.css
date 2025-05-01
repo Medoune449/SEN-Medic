@@ -23,7 +23,7 @@ body {
 }
 
 .slider{
-    width: 600px;
+    width: 460px;
     height: 400px;
     background: url(fond.jpg) no-repeat;/*------ L'image ne sera pas répété avec no-repeat -----*/
     margin: 100px auto;  /*------ L'image sera centrer -----*/
